@@ -19,4 +19,8 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find_by_id(params[:id])
     erb :'tweets/show'
   end
+  
+  get '/tweets/:id/edit' do
+    
+  end
 end
