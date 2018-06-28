@@ -4,7 +4,9 @@ class TweetsController < ApplicationController
   end
   
   post '/tweets' do
-    @tweet = Tweet.create(content: params[:content])
+    if !params[:content].empty?
+      @tweet = Tweet.create(content: params[:content])
+    end
     redirect to "/tweets/#{@tweet.id}"
   end
 end
