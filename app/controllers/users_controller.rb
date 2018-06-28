@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   end
   
   post '/signup' do
-    @user = User.new(username: params[:username], email: params[:email], password: params[:password])
+    if !params[:username].empty? && !params[:email].empty? && !params[:password].empty?
+      @user = User.create(username: params[:username], email: params[:email], password: params[:password])
+    
   end
 end
