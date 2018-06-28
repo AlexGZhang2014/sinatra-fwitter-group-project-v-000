@@ -37,4 +37,10 @@ class TweetsController < ApplicationController
       redirect to "/tweets/#{@tweet.id}/edit"
     end
   end
+  
+  delete '/posts/:id/delete' do #delete action
+    @post = Post.find_by_id(params[:id])
+    @post.delete
+    redirect to '/posts'
+  end
 end
