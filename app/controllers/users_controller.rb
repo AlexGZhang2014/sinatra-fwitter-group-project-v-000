@@ -16,4 +16,18 @@ class UsersController < ApplicationController
       redirect to "/signup"
     end
   end
+  
+  get '/login' do
+    erb :login
+  end
+  
+  post '/login' do
+    if !params[:username].empty? && !params[:password].empty?
+      @user = User.find_by(username: params[:username], password: params[:password])
+      session[:id] = @user.id
+      redirect to "/tweets"
+    else
+      redirect to "/login"
+    end
+  end
 end
