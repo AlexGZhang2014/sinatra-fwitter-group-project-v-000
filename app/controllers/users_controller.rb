@@ -8,6 +8,6 @@ class UsersController < ApplicationController
   end
   
   post '/signup' do
-    
+    @user = User.new(username: params[:username], email: params[:email], password: params[:password])
   end
 end
