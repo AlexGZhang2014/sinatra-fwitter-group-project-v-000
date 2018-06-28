@@ -29,5 +29,10 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find_by_id(params[:id])
     if !params[:content].empty?
       @tweet.content = params[:content]
+      @tweet.save
+      redirect to "/tweets/#{@tweet.id}"
+    else
+      redirect to "/tweets/#{@tweet.id}/edit"
+    end
   end
 end
