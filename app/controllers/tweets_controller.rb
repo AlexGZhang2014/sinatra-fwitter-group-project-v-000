@@ -25,5 +25,9 @@ class TweetsController < ApplicationController
     erb :'tweets/edit'
   end
   
-  patch '/tweets/:id'
+  patch '/tweets/:id' do
+    @tweet = Tweet.find_by_id(params[:id])
+    if !params[:content].empty?
+      @tweet.content = params[:content]
+  end
 end
