@@ -21,13 +21,13 @@ class UsersController < ApplicationController
     erb :'users/login'
   end
   
-  post '/users/login' do
+  post '/login' do
     if !params[:username].empty? && !params[:password].empty?
       @user = User.find_by(username: params[:username], password: params[:password])
       session[:user_id] = @user.id
       redirect to "/tweets"
     else
-      redirect to "/users/login"
+      redirect to "/login"
     end
   end
   
