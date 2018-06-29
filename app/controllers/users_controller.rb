@@ -48,4 +48,6 @@ class UsersController < ApplicationController
     @users = User.all
     erb :'users/index'
   end
+  
+  get '/users/:slug'
 end
