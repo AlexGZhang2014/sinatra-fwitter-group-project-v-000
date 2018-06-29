@@ -43,4 +43,9 @@ class UsersController < ApplicationController
     session.clear
     redirect to "/login"
   end
+  
+  get '/users' do
+    @users = User.all
+    erb :'users/index'
+  end
 end
