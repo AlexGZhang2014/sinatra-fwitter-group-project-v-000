@@ -3,8 +3,8 @@
 <p>Click here to edit your tweet.</p>
 <br>
 <form action="/tweets/<%= @tweet.id %>/edit" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Tweet">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <input type="submit" value="Edit Tweet">
 </form>
 <br>
 <p>Or <a href="/tweets">Click here</a> to see all of your tweets.</p>
