@@ -49,5 +49,7 @@ class UsersController < ApplicationController
     erb :'users/index'
   end
   
-  get '/users/:slug'
+  get '/users/:slug' do
+    @user = User.find_by_slug()
+  end
 end
