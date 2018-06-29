@@ -64,7 +64,7 @@ class TweetsController < ApplicationController
       @tweet.delete
       redirect to '/tweets'
     elsif logged_in?
-      redirect to '/tweets'
+      redirect to "/tweets/#{@tweet.id}"
     else
       redirect to '/login'
     end
