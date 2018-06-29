@@ -41,7 +41,7 @@ class TweetsController < ApplicationController
     if logged_in? && current_user.id == @tweet.user_id
       erb :'tweets/edit'
     elsif logged_in?
-      redirect to "/tweets"
+      redirect to "/tweets/#{@tweet.id}"
     else
       redirect to "/login"
     end
