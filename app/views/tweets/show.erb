@@ -3,8 +3,7 @@
 <h3><%= @tweet.content %></h3>
 <p>Click here to edit your tweet.</p>
 <br>
-<form action="/tweets/<%= @tweet.id %>/edit" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
+<form action="/tweets/<%= @tweet.id %>/edit" method="GET">
   <input type="submit" value="Edit Tweet">
 </form>
 <br>
