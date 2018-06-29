@@ -1,5 +1,5 @@
 <h1>Profile Page for <%= @user.username %></h1>
 <h2>Tweets</h2>
 <% @user.tweets.each do |tweet| %>
-  <h4><%= tweet.content %><br><a href="/tweets/<%= tweet.id %>"></a></h4>
+  <h4><%= tweet.content %><br><a href="/tweets/<%= tweet.id %>">Click here to view this tweet</a></h4>
 <% end %>
